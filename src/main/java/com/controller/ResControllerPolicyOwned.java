@@ -43,8 +43,8 @@ public class ResControllerPolicyOwned {
 		
 	}
 
-	@PostMapping("/getAllPolicyByClientUsername")
-	public List<PolicyOwned> getAllPolicyByClientUsername(String clientUsername){
+	@GetMapping("/getAllPolicyByClientUsername/{clientUsername}")
+	public List<PolicyOwned> getAllPolicyByClientUsername(@PathVariable String clientUsername){
 		return policyOwnedService.getAllPolicyByClientUsername(clientUsername);
 	}
 	
