@@ -15,11 +15,10 @@ public class PolicyServiceImpl implements PolicyService {
 	PolicyRepo policyRepo;
 
 	@Override
-	public Policy addPolicy(Policy policy) {
+	public String registerPolicy(Policy policy) {
 		// TODO Auto-generated method stub
-		System.out.println(policy);
 		policyRepo.save(policy);
-		return policy;
+		return "Policy Added!!";
 	}
 
 	@Override
