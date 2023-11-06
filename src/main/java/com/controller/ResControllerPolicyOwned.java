@@ -32,8 +32,15 @@ public class ResControllerPolicyOwned {
 	
 	@PostMapping("/applyPolicy")
 	@ResponseBody
-	public String applyPolicy(@ModelAttribute PolicyOwned policyOwned) {
+	public String applyPolicy(@RequestBody PolicyOwned policyOwned) {
 		policyOwnedService.applyPolicy(policyOwned);
+		return "Policy Applied";
+	}
+	
+	@PostMapping("/applyPolicyList")
+	@ResponseBody
+	public String applyPolicyList(@RequestBody List<PolicyOwned> policyOwned) {
+		policyOwnedService.applyPolicyList(policyOwned);
 		return "Policy Applied";
 	}
 	

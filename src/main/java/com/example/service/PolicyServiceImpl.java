@@ -16,25 +16,27 @@ public class PolicyServiceImpl implements PolicyService {
 
 	@Override
 	public String registerPolicy(Policy policy) {
-		// TODO Auto-generated method stub
 		policyRepo.save(policy);
 		return "Policy Added!!";
 	}
 
 	@Override
 	public List<Policy> getAllPolicy() {
-		// TODO Auto-generated method stub
 		return (List<Policy>)policyRepo.findAll();
 	}
 
 	@Override
 	public Optional<Policy> getPolicyById(int policyId) {
-		// TODO Auto-generated method stub
 		Optional<Policy> p=policyRepo.findById(policyId);
 		if(p.isPresent()) {
 			return p;
 		}
 		return Optional.empty();
+	}
+
+	@Override
+	public List<Policy> getPolicyByIds(List<Integer> policyLs) {
+		return policyRepo.findByPolicyIdIn(policyLs);
 	}
 
 }

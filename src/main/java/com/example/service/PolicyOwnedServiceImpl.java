@@ -62,4 +62,10 @@ public class PolicyOwnedServiceImpl implements PolicyOwnedService {
 		return policyOwnedRepo.findById(Integer.valueOf(policyId)).get();
 	}
 
+	@Override
+	public String applyPolicyList(List<PolicyOwned> policyOwned) {
+		policyOwnedRepo.saveAll(policyOwned);
+		return "Policies Applied";
+	}
+
 }
