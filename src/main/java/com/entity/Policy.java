@@ -23,10 +23,7 @@ public class Policy {
 	private Integer policyId;
 	private String policyName;
 	private String policyDesc;
-	private int duration;
+	private Integer duration;
 	private PolicyType policyType;
-	
-	
-	
-
+	private Double amount;
 }

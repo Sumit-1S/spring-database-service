@@ -15,5 +15,6 @@ public interface PolicyOwnedService {
 	public ArrayList<PolicyOwned> getAllPolicyByPolicyId(Integer policyId);
 	public String updateAppliedPolicy(UpdatePolicyRequest policyOwned);
 	public PolicyOwned getPolicyById(String policyId);
+	public String applyPolicyList(List<PolicyOwned> policyOwned);
 
 }
